@@ -5,13 +5,12 @@
   /* ---------- Theme toggle ---------- */
   var themeBtn = document.getElementById('theme-toggle');
   function currentTheme() {
-    var set = root.getAttribute('data-theme');
-    if (set) return set;
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    return root.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
   }
   themeBtn.addEventListener('click', function () {
     var next = currentTheme() === 'dark' ? 'light' : 'dark';
-    root.setAttribute('data-theme', next);
+    if (next === 'light') root.setAttribute('data-theme', 'light');
+    else root.removeAttribute('data-theme');
     try { localStorage.setItem('theme', next); } catch (e) {}
   });
 
