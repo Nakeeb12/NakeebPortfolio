@@ -363,8 +363,9 @@ svg.fill { fill: currentColor; stroke: none; }
 }
 .headshot-tag {
   position: absolute;
-  left: -64px;
-  top: 34px;
+  right: calc(100% + 14px);
+  top: 50%;
+  transform: translateY(-50%);
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -827,8 +828,19 @@ svg.fill { fill: currentColor; stroke: none; }
   .stat { padding: 20px; }
   .stat-num { font-size: 2rem; }
   .terminal-body { font-size: 12px; min-height: 260px; padding: 16px; }
-  .headshot { width: 180px; }
-  .headshot-tag { left: -40px; top: 22px; }
+  .headshot {
+    width: 180px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .headshot::before { inset: -10px -10px auto; height: 200px; }
+  .headshot-tag {
+    position: static;
+    transform: none;
+    margin-top: 18px;
+  }
   .tl-item { padding-left: 34px; }
   .timeline::before { left: 7px; }
   .tl-marker { width: 16px; height: 16px; top: 26px; }
