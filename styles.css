@@ -697,6 +697,18 @@ svg.fill { fill: currentColor; stroke: none; }
 .contact-card > * { position: relative; }
 .contact-card h2 { margin-bottom: 16px; }
 .contact-card .lead { margin: 0 auto; }
+.contact-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 28px;
+  margin-top: 28px;
+  font-size: 1.0625rem;
+  font-weight: 500;
+}
+.contact-details li { display: inline-flex; align-items: center; gap: 10px; }
+.contact-details svg { width: 19px; height: 19px; color: var(--accent); }
+.contact-details a:hover { color: var(--accent); }
 .contact-actions {
   display: flex;
   flex-wrap: wrap;
